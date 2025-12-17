@@ -281,7 +281,7 @@ void MainLoop(HMODULE hModule) {
 bool InitializeHook() { 
     WNDCLASSEX wc = { sizeof(WNDCLASSEX), CS_CLASSDC, DefWindowProc, 0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, NULL, "DX", NULL };
     RegisterClassEx(&wc);
-    HWND temp_hWnd = CreateWindow(wc.lpszClassName, "DX Window", WS_OVERLAPPEDWINDOW, 100, 100, 300, 300, NULL, NULL, wc.hInstance, NULL);
+    HWND temp_hWnd = CreateWindow(wc.lpszClassName, "overlap dx11", WS_OVERLAPPEDWINDOW, 100, 100, 300, 300, NULL, NULL, wc.hInstance, NULL);
 
     D3D_FEATURE_LEVEL featureLevel = D3D_FEATURE_LEVEL_11_0;
     DXGI_SWAP_CHAIN_DESC sd = {};
@@ -335,4 +335,5 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         break;
     }
     return TRUE;
+
 }
