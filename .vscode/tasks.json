@@ -1,0 +1,88 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // ----------------------------------------------------
+        // @DarkCheatcc
+        // ----------------------------------------------------
+        {
+            "label": "Сборка Инжектора",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g", 
+                "Injector.cpp",
+                
+                "imgui-master/imgui.cpp",
+                "imgui-master/imgui_draw.cpp",
+                "imgui-master/imgui_widgets.cpp",
+                "imgui-master/imgui_tables.cpp",
+                
+                "imgui-master/backends/imgui_impl_win32.cpp", 
+                "imgui-master/backends/imgui_impl_dx11.cpp", 
+                
+                // @DarkCheatcc
+                // @DarkCheatcc
+                "-I",
+                "imgui-master/", 
+                
+                "-mwindows", 
+                "-o", 
+                "Injector.exe", 
+                "-lws2_32", 
+                "-lwininet", 
+                "-ld3d11",    
+                "-ldxgi",     
+                "-lgdi32",    
+                "-ldwmapi",   
+                "-ld3dcompiler"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Компиляция Injector.exe"
+        },
+        
+        // ----------------------------------------------------
+        // @DarkCheatcc
+        // ----------------------------------------------------
+        {
+            "label": "Сборка DLL",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-shared", 
+                "-g", 
+                
+                "ImGui.cpp", 
+                
+                "imgui-master/imgui.cpp",
+                "imgui-master/imgui_draw.cpp",
+                "imgui-master/imgui_widgets.cpp",
+                "imgui-master/imgui_tables.cpp",
+                
+                "imgui-master/backends/imgui_impl_win32.cpp", 
+                "imgui-master/backends/imgui_impl_dx11.cpp", 
+                
+                // @DarkCheatcc
+                // @DarkCheatcc
+                "-I",
+                "imgui-master/", 
+                
+                "-l", "d3d11",      
+                "-l", "dxgi",       
+                "-l", "gdi32", 
+                "-l", "dwmapi",         
+                "-l", "d3dcompiler",    
+                
+                "-o", 
+                "ImGui.dll" 
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Компиляция DLL"
+        }
+    ]
+}
