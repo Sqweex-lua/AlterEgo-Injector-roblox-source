@@ -16,7 +16,7 @@ const char* TARGET_PROCESS_NAME = "RobloxPlayerBeta.exe";
 const char* DLL_PATH = "1488"; // тут путьь до длл
 const char* PIPE_NAME = "\\\\.\\pipe\\RobloxInjectorPipe"; 
 
-// Глобальное состояние
+// @darkcheatcc
 static ID3D11Device* g_pd3dDevice = nullptr;
 static ID3D11DeviceContext* g_pd3dDeviceContext = nullptr;
 static IDXGISwapChain* g_pSwapChain = nullptr;
@@ -269,4 +269,5 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     UnregisterClass(g_wc.lpszClassName, g_wc.hInstance);
     
     return 0;
+
 }
