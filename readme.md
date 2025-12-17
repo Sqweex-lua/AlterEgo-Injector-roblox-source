@@ -27,4 +27,5 @@
 **ЕСЛИ В КОДЕ ОШИБКИ ТО НИЧЕГО НЕ МЕНЯЙТЕ В ФАЙЛАХ INJECTOR.CPP И ImGui.CPP !!!!!!**
 
 **чтоб запустить сборку. ctrl + shift + p**
-**затем Run build task, Сборка Injector.exe, Сборка dll**
+
+**затем Run task, Сборка Injector.exe, Сборка dll**
